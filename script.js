@@ -11,24 +11,29 @@ function playGuessingGame(numToGuess, totalGuesses = 10){
   //for loop. Checks to see if the user doesn't enter anything
   //or if the user enters a number that is not a number
 
-  for (guesses = 1; guesses < totalGuesses; guesses++) {
+for (guesses = 1; guesses < totalGuesses; guesses++) {
+
+//  for (guesses = 1; guesses < totalGuesses) {
+    // removed counter for guesses and added to each if statement
     //check if the user doesn't enter anything.  If they do not enter anything, exist
     let num = prompt(promptText);
 
     if (num === null) {
+      guesses = 0;
       return 0;
     }
 
     // checks to see if the value they entered is a number
     else if (num === "" || isNaN(num)) {
       promptText = "Please enter a number";
-      guesses--;
+      // do not need if I remove the counter from the for statement
+      //guesses--;
     } else if (num > numToGuess) {
-      guesses++;
+      //guesses++;
       promptText = "Please enter a number";
       userGuess = prompt(num + " is too large. Guess a smaller number.");
     } else if (num < numToGuess) {
-      guesses++;
+      //guesses++;
       promptText = "Please enter a number";
       userGuess = prompt(num + " is too small. Guess a smaller number.");
     }  else
