@@ -32,6 +32,7 @@ function playGuessingGame(numToGuess, totalGuesses = 10){
       promptText = "Please enter a number";
       userGuess = prompt(num + " is too small. Guess a smaller number.");
     }  else
+      guesses = 0;
       promptText = "You failed to guess the number.";
 
     return guesses;
